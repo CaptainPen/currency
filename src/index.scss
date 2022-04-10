@@ -22,19 +22,19 @@ label {
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 920px) {
-  body {
-    background: #FFFFFF;
-    box-shadow: none;
-  }
+// @media screen and (max-width: 920px) {
+//   body {
+//     background: #FFFFFF;
+//     box-shadow: none;
+//   }
 
-  .wrapper {
-    margin: auto;
-    border-radius: 0;
-  }
+//   .wrapper {
+//     margin: auto;
+//     border-radius: 0;
+//   }
   
 
-}
+// }
 
 
 
@@ -89,34 +89,34 @@ header {
   background-color: #eff8fd73;
 }
 
-@media screen and (max-width: 920px) {
-  .header {
-    padding: 15px 30px;
-    .headerLeft {
-      h3 {
-        font-size: 30px;
-      }
+// @media screen and (max-width: 920px) {
+//   .header {
+//     padding: 15px 30px;
+//     .headerLeft {
+//       h3 {
+//         font-size: 30px;
+//       }
 
-      p{
-        font-size: 20px;
-      }
-    }
-  }
+//       p{
+//         font-size: 20px;
+//       }
+//     }
+//   }
 
-  .buttonNav {
-    display: block;
+//   .buttonNav {
+//     display: block;
     
 
-    .button:first-child {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-  }
-}
+//     .button:first-child {
+//       margin-bottom: 20px;
+//       font-size: 18px;
+//     }
+//   }
+// }
 
 
 
-.content {
+.convert {
   padding: 0 30px 30px 30px;
   min-height: 390px;
 
@@ -126,10 +126,10 @@ header {
 
   .form {
     display: flex;
-    background-color: #e7f6ff;
+    background-color: #ffffff;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
     border-radius: 20px;
-    border: 1px solid #F2F2F2;
+    border: 1px solid rgba(0,0,0,.125);
     box-sizing: border-box;
     justify-content: space-around;
     margin: 0 auto;
@@ -168,24 +168,24 @@ header {
   }
 }
 
-@media screen and (max-width: 790px) {
-  .content {
-    text-align: center;
+// @media screen and (max-width: 790px) {
+//   .content {
+//     text-align: center;
     
-    h1 {
-      margin-bottom: 20px;
-    }
+//     h1 {
+//       margin-bottom: 20px;
+//     }
 
-    .form {
-      display: inline-block;
-      flex-direction: column;
-      padding: 10px 50px;
-      .form-control {
-        font-size: 30px;
-      }
-    }
-  }
-}
+//     .form {
+//       display: inline-block;
+//       flex-direction: column;
+//       padding: 10px 50px;
+//       .form-control {
+//         font-size: 30px;
+//       }
+//     }
+//   }
+// }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -267,25 +267,25 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@media screen and (max-width: 790px) {
-  .exchange {
+// @media screen and (max-width: 790px) {
+//   .exchange {
 
-    h1 {
-      font-size: 40px;
-      justify-content: space-between;
-    }
-  }
+//     h1 {
+//       font-size: 40px;
+//       justify-content: space-between;
+//     }
+//   }
 
-  .blocks {
-    display: inline-block;
-    flex-direction: column;
+//   .blocks {
+//     display: inline-block;
+//     flex-direction: column;
     
-    .courses {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+//     .courses {
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
 
-        // СДЕЛАТЬ НОРМАЛЬНЫЙ ШРИФТ
-    }
-  }
-}
+//         // СДЕЛАТЬ НОРМАЛЬНЫЙ ШРИФТ
+//     }
+//   }
+// }

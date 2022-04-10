@@ -34,7 +34,7 @@ function ExchangeValue(){ //Функция вычисления и отобра�
       elementRUB.textContent = ((rates[select.value].Cur_OfficialRate / rates.RUB.Cur_OfficialRate) * rates.RUB.Cur_Scale).toFixed(2);
       flag = true;
     }
-  }, 100);
+  }, 50);
 }
 
 function ConvertValue() { //Функция вычисления и отображения конвертации
@@ -52,26 +52,8 @@ function ConvertValue() { //Функция вычисления и отобра�
       info.textContent = '1' + ' ' + rates[selectPay.value].Cur_Abbreviation + ' = ' + parseFloat((rates[selectPay.value].Cur_OfficialRate /  rates[selectPay.value].Cur_Scale) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(5) + ' ' + rates[selectReceive.value].Cur_Abbreviation;
       flag = true;
     }
-  }, 100);
+  }, 50);
 }
-
-// function ConvertValue() { //Функция вычисления и отображения конвертации
-//   let flag = false;
-//   setInterval(() => {
-//     if(!flag) {     
-//       //Элементы формы, ввод суммы, выбор валюты, посе с рез
-//       const input = document.querySelector('#input');
-//       const result = document.querySelector('#result');
-//       const selectPay = document.querySelector('#selectPay');
-//       const selectReceive = document.querySelector('#selectReceive');
-//       const info = document.querySelector('[data-value="Info"]'); 
-//       const select = document.querySelector('#select');
-//       result.value = ((parseFloat(input.value) * (rates[selectPay.value].Cur_OfficialRate / rates[selectPay.value].Cur_Scale)) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(2);
-//       info.textContent = '1' + ' ' + rates[selectPay.value].Cur_Abbreviation + ' = ' + parseFloat((rates[selectPay.value].Cur_OfficialRate /  rates[selectPay.value].Cur_Scale) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(5) + ' ' + rates[selectReceive.value].Cur_Abbreviation;
-//       flag = true;
-//     }
-//   }, 100);
-// }
 
 function App() { 
   //Определяем какая вкладка открыта
@@ -90,7 +72,7 @@ function App() {
           </ul>
         </header>
         
-        {converterOpened ? <div className="content">
+        {converterOpened ? <div className="convert">
           <h1>Конвертер валют</h1>
           <div className='form'>
             <div className='col'>
@@ -119,7 +101,6 @@ function App() {
                 id="selectReceive"
                 className="form-control"
                 onInput={ConvertValue}>
-                  
                   <option value="USD" defaultValue>USD - Доллар США</option>
                   <option value="BYN">BYN - Белорусский рубль</option>
                   <option value="EUR">EUR - Евро</option>
@@ -152,26 +133,21 @@ function App() {
                   <option value="RUB">RUB - 100 Рублей</option>
                   <option value="UAH">UAH - 100 Гривен</option>
                   <option value="PLN">PLN - 10 Злотых</option>
-                  
               </select></h1>
           <div className="blocks">
             <div className="courses">
               <div className="itemTitle">Курс USD</div>
               <div className="itemValue" data-value="USD">--.--</div>
             </div>
-
-              
-              
-              <div className="courses">
-                  <div className="itemTitle">Курс EUR</div>
-                  <div className="itemValue" data-value="EUR">--.--</div>
-              </div>
-              <div className="courses">
-                  <div className="itemTitle">Курс RUB</div>
-                  <div className="itemValue" data-value="RUB">--.--</div>
-              </div>
+            <div className="courses">
+              <div className="itemTitle">Курс EUR</div>
+              <div className="itemValue" data-value="EUR">--.--</div>
+            </div>
+            <div className="courses">
+              <div className="itemTitle">Курс RUB</div>
+              <div className="itemValue" data-value="RUB">--.--</div>
+            </div>
           </div>
-          
         </div> : null}
       </div>
   );
