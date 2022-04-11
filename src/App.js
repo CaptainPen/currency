@@ -34,7 +34,7 @@ function ExchangeValue(){ //Функция вычисления и отобра�
       elementRUB.textContent = ((rates[select.value].Cur_OfficialRate / rates.RUB.Cur_OfficialRate) * rates.RUB.Cur_Scale).toFixed(2);
       flag = true;
     }
-  }, 50);
+  }, 70);
 }
 
 function ConvertValue() { //Функция вычисления и отображения конвертации
@@ -52,7 +52,7 @@ function ConvertValue() { //Функция вычисления и отобра�
       info.textContent = '1' + ' ' + rates[selectPay.value].Cur_Abbreviation + ' = ' + parseFloat((rates[selectPay.value].Cur_OfficialRate /  rates[selectPay.value].Cur_Scale) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(5) + ' ' + rates[selectReceive.value].Cur_Abbreviation;
       flag = true;
     }
-  }, 50);
+  }, 70);
 }
 
 function App() { 
@@ -67,8 +67,8 @@ function App() {
             <p>exchange rate and converter</p>
           </div>
           <ul className="buttonNav">
-          <li><button className="button" onClick={() => (setExchangeOpened(true), setConverterOpened(false), ExchangeValue())}>Курсы валют</button></li>
-          <li><button className="button" onClick={() => (setConverterOpened(true), setExchangeOpened(false), ConvertValue())}>Конвентер валют</button></li>
+            <li><button className="button" onClick={() => (setExchangeOpened(true), setConverterOpened(false), ExchangeValue())}>Курсы валют</button></li>
+            <li><button className="button" onClick={() => (setConverterOpened(true), setExchangeOpened(false), ConvertValue())}>Конвентер валют</button></li>
           </ul>
         </header>
         
