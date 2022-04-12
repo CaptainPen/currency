@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const rates = {}; //Объект с курсами валют
 
 GetCurrencies ();
-ExchangeValue();
+ExchangeValue()
 
 async function GetCurrencies () {  //Функция получения курса валют
   try {
@@ -37,28 +37,29 @@ function ExchangeValue(){ //Функция вычисления и отобра�
   }, 70);
 }
 
-function ConvertValue() { //Функция вычисления и отображения конвертации
-  let flag = false;
-  setInterval(() => {
-    if(!flag) {     
-      //Элементы формы, ввод суммы, выбор валюты, посе с рез
-      const input = document.querySelector('#input');
-      const result = document.querySelector('#result');
-      const selectPay = document.querySelector('#selectPay');
-      const selectReceive = document.querySelector('#selectReceive');
-      const info = document.querySelector('[data-value="Info"]'); 
-      const select = document.querySelector('#select');
-      result.value = ((parseFloat(input.value) * (rates[selectPay.value].Cur_OfficialRate / rates[selectPay.value].Cur_Scale)) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(2);
-      info.textContent = '1' + ' ' + rates[selectPay.value].Cur_Abbreviation + ' = ' + parseFloat((rates[selectPay.value].Cur_OfficialRate /  rates[selectPay.value].Cur_Scale) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(5) + ' ' + rates[selectReceive.value].Cur_Abbreviation;
-      flag = true;
-    }
-  }, 70);
-}
+ function ConvertValue() { //Функция вычисления и отображения конвертации
+   let flag = false;
+   setInterval(() => {
+     if(!flag) {     
+       //Элементы формы, ввод суммы, выбор валюты, посе с рез
+       const input = document.querySelector('#input');
+       const result = document.querySelector('#result');
+       const selectPay = document.querySelector('#selectPay');
+       const selectReceive = document.querySelector('#selectReceive');
+       const info = document.querySelector('[data-value="Info"]'); 
+       const select = document.querySelector('#select');
+       result.value = ((parseFloat(input.value) * (rates[selectPay.value].Cur_OfficialRate / rates[selectPay.value].Cur_Scale)) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(2);
+       info.textContent = '1' + ' ' + rates[selectPay.value].Cur_Abbreviation + ' = ' + parseFloat((rates[selectPay.value].Cur_OfficialRate /  rates[selectPay.value].Cur_Scale) / (rates[selectReceive.value].Cur_OfficialRate / rates[selectReceive.value].Cur_Scale)).toFixed(5) + ' ' + rates[selectReceive.value].Cur_Abbreviation;
+       flag = true;
+     }
+   }, 70);
+ }
 
 function App() { 
   //Определяем какая вкладка открыта
   const [exchangeOpened, setExchangeOpened] = React.useState(true);
   const [converterOpened, setConverterOpened] = React.useState(false);    
+
   return (
       <div className="wrapper">
         <header className="header">
