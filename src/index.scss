@@ -20,11 +20,10 @@ label {
   box-sizing: border-box;
 }
 
-  .wrapper {
-    margin: auto;
-    border-radius: 0;
-  }
-
+.wrapper {
+  margin: auto;
+  border-radius: 0;
+}
 
 header {
   background-color: #600;
@@ -70,148 +69,171 @@ header {
   max-width: 1080px;
   margin: auto;
   // background-color: aqua;
-
 }
 
- 
+.exchange {
+  padding: 0 30px 30px 30px;
+  min-height: 390px;
 
+  h1 {
+    align-items: center;
+    display: flex;
+    margin-bottom: 40px;
 
-  .exchange {
-    padding: 0 30px 30px 30px;
-    min-height: 390px;
-  
-    h1 {
-      align-items: center;
-      display: flex;
-      margin-bottom: 40px;
-  
-      .form-control {
-        box-sizing: border-box;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        outline: none;
-        margin-left: 30px;
-      }
-    }
-  
-    .blocks {
-      justify-content: space-around;
-      margin: 0 auto;
-      display: flex;
-      max-width: 800px;
-      padding-bottom: 90px;
-  
-      .courses {
-        background-color: #ffffff;
-        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
-        min-width: 100px;
-        border-radius: 20px;
-        border: 1px solid rgba(0,0,0,.125);
-        padding: 25px 80px 40px 35px;
-      
-        .itemTitle {
-          font-weight: 700;
-          font-size: 20px;
-          margin-bottom: 80px;
-  
-          span {
-            position: absolute;
-            font-size: 12px;
-            margin: 0;
-            opacity: 0.5;
-          }
-        }
-        .itemValue {
-          font-size: 32px;
-          font-weight: 300;
-        }
-      }
+    .form-control {
+      box-sizing: border-box;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      outline: none;
+      margin-left: 30px;
     }
   }
-  
- 
 
-   .convert {
-    padding: 0 30px 30px 30px;
-    min-height: 390px;
-  
-    h1 {
-      margin-bottom: 40px;
-    }
-  
-    .form {
-      display: flex;
+  .blocks {
+    justify-content: space-around;
+    margin: 0 auto;
+    display: flex;
+    max-width: 800px;
+    padding-bottom: 90px;
+
+    .courses {
       background-color: #ffffff;
       box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+      min-width: 100px;
       border-radius: 20px;
-      border: 1px solid rgba(0,0,0,.125);
-      box-sizing: border-box;
-      justify-content: space-around;
-      padding: 40px 20px;
-      max-width: 600px;
-      margin-bottom: 30px;
-  
-      .form-control {
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        outline: none;
-        margin-top: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      padding: 25px 80px 40px 35px;
+
+      .itemTitle {
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 80px;
+
+        span {
+          position: absolute;
+          font-size: 12px;
+          margin: 0;
+          opacity: 0.5;
+        }
+      }
+      .itemValue {
+        font-size: 32px;
+        font-weight: 300;
       }
     }
-  
-    .info {
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .exchange {
+    h1 {
+      .form-control {
+        font-size: 14px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .blocks {
+    display: inline-block;
+    flex-direction: column;
+
+    .courses {
       display: flex;
       align-items: center;
-      justify-content: center;
-      opacity: 0.5;
-      justify-content: center;
-      margin-top: 20px;
-    
-      img {
-        margin-right: 10px;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .exchange {
+    h1 {
+      .form-control {
+        font-size: 13px;
+        margin-left: 5px;
       }
     }
   }
-  
-  
-  
-  input[type="number"]::-webkit-outer-spin-button,
-  input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  input[type="number"] {
-    -moz-appearance: textfield;
-  }
-  input[type="number"]:hover,
-  input[type="number"]:focus {
-    -moz-appearance: number-input;
-  }
-  
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+}
+
+.convert {
+  padding: 0 30px 30px 30px;
+  min-height: 390px;
+
+  h1 {
+    margin-bottom: 40px;
   }
 
+  .form {
+    display: flex;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    box-sizing: border-box;
+    justify-content: space-around;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin-bottom: 30px;
 
+    .form-control {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.375rem 0.75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      outline: none;
+      margin-top: 20px;
+    }
+  }
 
-  // https://github.com/wojtekmaj/react-calendar
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    justify-content: center;
+    margin-top: 20px;
+
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// https://github.com/wojtekmaj/react-calendar
