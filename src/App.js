@@ -59,6 +59,7 @@ function ExchangeValue(){ //Функция вычисления и отобра�
  }
   
   function getToday() { //Функция смены месяца из строки в число, назначение даты для API 
+    const DateNumber = document.querySelector('#getTodayForm');
     let arr = String(valuenew).split(' ');
     switch(arr[1]) {
       case 'Jan': 
@@ -98,7 +99,10 @@ function ExchangeValue(){ //Функция вычисления и отобра�
       arr[1] = 12;
       break;
     }
-    return `${arr[3]}-${arr[1]}-${arr[2]}`;
+    if (arr[1] !== undefined) {
+      DateNumber.textContent = `на ${arr[3]}-${arr[1]}-${arr[2]}`;
+    } 
+    return `${arr[3]}-${arr[1]}-${arr[2]}`; 
   }
 
   Render();
@@ -142,7 +146,7 @@ function ExchangeValue(){ //Функция вычисления и отобра�
       <div className="content">
         {converterOpened ? (
           <div className="convert">
-            <h1>Конвертер валют на {getToday()}</h1>
+            <h1>Конвертер валют <span id="getTodayForm"></span></h1>
             <div className="form">
               <div className="col">
                 <label htmlFor="name">Отдаю:</label>
